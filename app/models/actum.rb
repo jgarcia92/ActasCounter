@@ -62,9 +62,7 @@ class Actum < ActiveRecord::Base
       self.alianza_patriotica.to_i+
       self.vamos.to_i+
       self.frente_amplio.to_i+
-      self.blancos.to_i+
       self.pac.to_i+
-      self.nulos.to_i+
       self.dc.to_i
   end
 
@@ -107,9 +105,7 @@ class Actum < ActiveRecord::Base
       pac: Actum.where(:actum_type=>'p').where(:actum_type=>'p').sum("pac"),
       vamos: Actum.sum("vamos"),
       frente_amplio: Actum.where(:actum_type=>'p').sum("frente_amplio"),
-      ud: Actum.where(:actum_type=>'p').sum("ud"),
-      nulos: Actum.where(:actum_type=>'p').sum("nulos"),
-      blancos: Actum.where(:actum_type=>'p').sum("blancos")
+      ud: Actum.where(:actum_type=>'p').sum("ud")
     }
   end
 

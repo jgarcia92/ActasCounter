@@ -53,8 +53,7 @@ A&uacute;n tienes que completar estas actas:
 	    <th>Alianza Patriótica</th>
 	    <th>Vamos</th>
             <th>Frente Amplio</th>
-	    <th>Blancos</th>
-	    <th>Nulos</th>
+
 	    <th>Suma Coincide?</th>
 	    <th>Usuario</th>
 	    <th>Hora de ingreso</th>
@@ -72,8 +71,6 @@ A&uacute;n tienes que completar estas actas:
 	   <td><b><%= @sumAlianza_Patriotica %></b></td>
 	   <td><b><%= @sumVamos %></b></td>
 	   <td><b><%=@sumFrente_Amplio%></b></td>
-	   <td><b><%= @sumBlancos %></b></td>
-	   <td><b><%= @sumNulos %></b></td>
 	   <td></td>
 	   <td></td>
 	   <td></td>
@@ -91,8 +88,6 @@ A&uacute;n tienes que completar estas actas:
 	   <td><b><%= number_with_precision((@sumAlianza_Patriotica.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
 	   <td><b><%= number_with_precision((@sumVamos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
 	   <td><b><%= number_with_precision((@sumFrente_Amplio.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
-	   <td><b><%= number_with_precision((@sumBlancos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
-	   <td><b><%= number_with_precision((@sumNulos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
 	   <td></td>
 	   <td></td>
 	   <td></td>
@@ -111,8 +106,6 @@ A&uacute;n tienes que completar estas actas:
 	    <td><%= actum.alianza_patriotica %></td>
 	    <td><%= actum.vamos %></td>
 	    <td><%= actum.frente_amplio %></td>
-	    <td><%= actum.blancos %></td>
-	    <td><%= actum.nulos %></td>
 	    <td><%= actum.is_sum_ok ? "Si" : "No"%></td> 
 	   <td><a href="<%=user_profile_path(actum.user.id)%>"><img src="https://graph.facebook.com/<%=actum.user.uid%>/picture?width=35&height=35" alt="<%=actum.user.shortname%>" title="<%=actum.user.shortname%>"></a></td>
 
@@ -142,8 +135,6 @@ A&uacute;n tienes que completar estas actas:
 		   <td><b><%= @sumAlianza_Patriotica %></b></td>
 		   <td><b><%= @sumVamos %></b></td>
 		   <td><b><%=@sumFrente_Amplio%></b></td>
-		   <td><b><%= @sumBlancos %></b></td>
-		   <td><b><%= @sumNulos %></b></td>
 		   <td></td>
 		   <td></td>
 		   <td></td>
@@ -161,9 +152,7 @@ A&uacute;n tienes que completar estas actas:
 		   <td><b><%= number_with_precision((@sumAlianza_Patriotica.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
 		   <td><b><%= number_with_precision((@sumVamos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
 		   <td><b><%= number_with_precision((@sumFrente_Amplio.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
-		   <td><b><%= number_with_precision((@sumBlancos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
-		   <td><b><%= number_with_precision((@sumNulos.to_f/@sumAll.to_f)*100,precision: 2) %>%</b></td>
-		   <td></td>
+		  	<td></td>
 		   <td></td>
 		   <td></td>
 		   <td></td>
