@@ -17,6 +17,9 @@
 	    </ul>
 	  </div>
   <% end %>
+
+
+
   <div style="float:left;width:20%">	
    <%=render :partial=>"#{@actum.full_type}_form", :locals=>{:f=>f}%>
 
@@ -54,6 +57,16 @@
   </div>
   <%end%>
 
+<div class="alert alert-info" style="float:left:width:100%;clear:both;padding-top:20px;padding-bottom:20px">
+  
+  <p>
+    <a style="color:#fff;" class="btn btn-primary btn-lg" href="https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer=<%=@actum.numero%>" target="_blank">Ver Versión del TSE de esta acta.</a>
+  </p>
+  <br/>
+  <p>
+    Si hay inconsistencias notables con el resultado del TSE (la imagen ya no es la misma, errores en los totales digitados, observaciones no acatadas, etc.). Por favor <strong>repórtalas</strong> en el formulario al final de esta página.
+  </p>
+</div>
 
 <%if @actum.verifications.count>0%>
 <div style="float:left:width:100%;clear:both;padding-top:20px;padding-bottom:20px">
@@ -69,7 +82,7 @@
   <%@actum.verifications.order("created_at ASC").each do |verification|%>
     <tr>
 	  <td>
-		<a href="http://facebook.com/<%=verification.user.uid%>" target="_blank"><img src="https://graph.facebook.com/<%=verification.user.uid%>/picture?width=35&height=35" alt="<%=verification.user.shortname%>" title="<%=verification.user.shortname%>"></a>
+            <a href="http://facebook.com/<%=verification.user.uid%>" target="_blank"><img src="https://graph.facebook.com/<%=verification.user.uid%>/picture?width=35&height=35" alt="<%=verification.user.shortname%>" title="<%=verification.user.shortname%>"></a>
 	  </td>
 	  <td><%=verification.created_at.strftime("%d/%b/%Y - %k:%M:%S")%></td>
 	  <td>
@@ -97,16 +110,7 @@
 </div>
 <%end%>
 
-<div class="alert alert-info" style="float:left:width:100%;clear:both;padding-top:20px;padding-bottom:20px">
-  
-  <p>
-    <a style="color:#fff;" class="btn btn-primary btn-lg" href="https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer=<%=@actum.numero%>" target="_blank">Ver Versión del TSE de esta acta.</a>
-  </p>
-  <br/>
-  <p>
-    Si hay inconsistencias notables con el resultado del TSE (la imagen ya no es la misma, errores en los totales digitados, observaciones no acatadas, etc.). Por favor <strong>repórtalas</strong> en el formulario al final de esta página.
-  </p>
-</div>
+
 
 <p>
 <div style="float:left;width:100%;clear:both;padding-top:1px;padding-bottom:0px">
@@ -123,7 +127,7 @@
 		<% @actum.reportes.each do |reporte| %>
 		  <tr>
 	        <td><%= reporte.date.strftime("%d/%b/%Y - %k:%M:%S")%></td>
-		    <td><a href="<%=user_profile_path(reporte.user.id)%>"><img src="https://graph.facebook.com/<%=reporte.user.uid%>/picture?width=35&height=35" alt="<%=reporte.user.shortname%>" title="<%=reporte.user.shortname%>"></a></td>
+	<td><a href="<%=user_profile_path(reporte.user.id)%>"><img src="https://graph.facebook.com/<%=reporte.user.uid%>/picture?width=35&height=35" alt="<%=reporte.user.shortname%>" title="<%=reporte.user.shortname%>"></a></td>
 		    <td><%= auto_link(reporte.body,:html => { :target => '_blank' }) %>
 				<% unless reporte.image.blank?%>
 			      <br/><p>
