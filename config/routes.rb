@@ -1,6 +1,6 @@
 ConteoActas::Application.routes.draw do
   resources :reportes, :except=>[:destroy, :edit, :update, :show, :new]
-  #resources :users, :except=>[:destroy, :new]
+  resources :users, :except=>[:destroy, :new]
   resources :verifications, :except=>[:edit,:destroy,:update,:new]
 
   get "/acta/lista/:type", to: "acta#index", as: "acta_list"
@@ -9,10 +9,10 @@ ConteoActas::Application.routes.draw do
   resources :acta, :except=>[:edit,:update,:destroy]
   
   
-  #resources :user_profile
+  resources :user_profile
   
   get '/search' => 'acta#show'
-  #get '/acerca' => 'home#about'
+  get '/acerca' => 'home#about'
   get '/contacto' => 'home#contacto'
   get 'all-done' => 'home#all_done', :as => :all_done
   

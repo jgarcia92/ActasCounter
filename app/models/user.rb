@@ -32,10 +32,6 @@ class User < ActiveRecord::Base
     end
     user
   end
-
-  def redacted_name
-    name.split(/\s+/).map{|s| s.slice(0)}.join()
-  end
   
  
   def calculated_verification_count

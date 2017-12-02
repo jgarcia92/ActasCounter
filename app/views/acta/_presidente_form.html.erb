@@ -68,7 +68,7 @@
 	  <td><b>Totales iguales?:</b></td><td><%=@actum.is_sum_ok ? "Si" : "No"%></td>
 	</tr>
 	<tr>
-		<td><b>Ingresada por</b></td><td><%= @actum.user.redacted_name%></td>
+		<td><b>Ingresada por</b></td><td><a href="http://facebook.com/<%=@actum.user.uid%>" target="_blank"><img src="https://graph.facebook.com/<%=@actum.user.uid%>/picture?width=35&height=35" alt="<%=@actum.user.shortname%>" title="<%=@actum.user.shortname%>"></a></td>
 	</tr>
 	<% if @actum.verified_count>0%>
 	<tr>

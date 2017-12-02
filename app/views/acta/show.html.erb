@@ -69,7 +69,7 @@
   <%@actum.verifications.order("created_at ASC").each do |verification|%>
     <tr>
 	  <td>
-            <%= verification.user.redacted_name %>
+		<a href="http://facebook.com/<%=verification.user.uid%>" target="_blank"><img src="https://graph.facebook.com/<%=verification.user.uid%>/picture?width=35&height=35" alt="<%=verification.user.shortname%>" title="<%=verification.user.shortname%>"></a>
 	  </td>
 	  <td><%=verification.created_at.strftime("%d/%b/%Y - %k:%M:%S")%></td>
 	  <td>
@@ -123,7 +123,7 @@
 		<% @actum.reportes.each do |reporte| %>
 		  <tr>
 	        <td><%= reporte.date.strftime("%d/%b/%Y - %k:%M:%S")%></td>
-		    <td><%= reporte.user.redacted_name %></td>
+		    <td><a href="<%=user_profile_path(reporte.user.id)%>"><img src="https://graph.facebook.com/<%=reporte.user.uid%>/picture?width=35&height=35" alt="<%=reporte.user.shortname%>" title="<%=reporte.user.shortname%>"></a></td>
 		    <td><%= auto_link(reporte.body,:html => { :target => '_blank' }) %>
 				<% unless reporte.image.blank?%>
 			      <br/><p>
