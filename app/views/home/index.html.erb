@@ -20,8 +20,8 @@
 	  <%end%>
 	</div>
   </div>
-  <div class="alert alert-info">
-    <h2>Nueva funcionalidad: Reportes</h2>
+  <div class="well">
+    <h2>Reportes</h2>
     <p>Ahora que hemos terminado de digitar y estamos validando, puedes descargar los últimos datos de actas en nuestra base de datos para analizarlos por tu cuenta:</p>
     <ul>
       <li>Todas las actas: 
@@ -36,6 +36,9 @@
       </li>
     </ul>
   </div>
+<div class="alert alert-info">
+<p><strong>En el espíritu de generar confianza a otras instituciones para poder digitar sus actas, no presentaremos resultados de las digitaciones actuales pero sí los hacemos disponibles en la sección de reportes.</strong></p>
+</div>
   <div class="alert alert-warning">
     <h2>Aclaratoria</h2>
     <ol>
@@ -44,11 +47,15 @@
       <li>Es muy importante que nos reporten cualquier inconsistencia en el Acta, esta información la compartiremos con las organizaciones políticas.</li>
       <li> El resultado obtenido no es oficial, ni vinculatorio. Simplemente refleja los totales ingresados por usuarios de internet interesados en auditar y validar las actas disponibles.</li>
       <li>Exhortamos a todos los representantes de organizaciones independientes y partidos políticos a que utilicen esta plataforma para validar sus conteos y actas.</li>
+
     </ol>
+
   </div>
-  <%cache "result-summary-home", :expires_in=>3.minutes do %>
-    <%=render "results_table"%>
-  <%end%>
+
+    <%cache "result-summary-home", :expires_in=>3.minutes do %>
+      <%=render "results_table"%>
+    <%end%>
+
 </div>
  
 <div style="margin:auto;width:100%;text-align:center;">
