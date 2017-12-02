@@ -53,8 +53,6 @@
 		<%=link_to "/acta/random" do%><button type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Validar Acta</button><%end%>
 
 		<%=link_to "/reportes" do%><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-warning-sign"></span> Reportes</button><%end%>
-			
-		<%=link_to "/user_profile" do%><button type="button" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-user"></span> Top Contribuidores</button><%end%>
 		
 	<%else%>
 	  <h4 class="text-muted">Sistema de Conteo de Actas</h4>
@@ -75,7 +73,7 @@
 			
 		    <%= link_to(destroy_user_session_path, :method => :delete) do%><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-off"></span> Logout</button><%end%>
 		
-		    <img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=35&height=35"> 
+
 		  </div>
 		<%else%>
 		  <div style="float:right;display:none">
@@ -102,7 +100,7 @@
 <div class="btn-group">
     <button type="button" class="btn btn-default"><a href="/"><span class="glyphicon glyphicon-home"></span> Inicio</a></button>
 	
-  <button type="button" class="btn btn-default"><a href="/acerca"><span class="glyphicon glyphicon-info-sign"></span> Acerca de VotoSocial</a></button>
+
   <button type="button" class="btn btn-default"><a href="/contacto"><span class="glyphicon glyphicon-envelope"></span> Contacto</a></button>
  </div>
 </div>
